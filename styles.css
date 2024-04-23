@@ -20,6 +20,7 @@ header {
     box-sizing: border-box;
     padding-left: 4%;
     width: 100%;
+    vertical-align: middle;
 }
 
 .logo img {
@@ -68,10 +69,16 @@ header {
     padding-bottom: 8%;
     justify-content: center;
     max-height: 500px;
+    overflow: hidden;
+}
+
+.military-bg h1 h2 {
+    word-wrap: break-word; /* Добавлено */
+    max-width: 100%;
 }
 
 .military-bg h1 {
-    font-size: 1.8%;
+    font-size: 2rem;
     text-align: center;
     color: white;
     margin: 0;
@@ -83,7 +90,6 @@ header {
     text-align: center;
     color: rgb(182, 182, 182);
     font-size: 1rem;
-    padding: 0px 4%;
 }
 
 .fade-in {
