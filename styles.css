@@ -4,7 +4,7 @@
 
 body {
     font-family: 'Trebuchet MS';
-    background-color: rgb(231,231,231);
+    background-color: rgba(215, 215, 215, 0.763);
     margin: 0;
     box-sizing: border-box;
 }
@@ -24,9 +24,11 @@ header {
 }
 
 .logo img {
-    width: 4vw;
-    height: 4vw;
-    margin-right: 40px;
+    min-width: 40px;
+    min-height: 40px;
+    width: 4vmin;
+    height: 4vmin;
+    margin-right: 4vmin;
     border-radius: 50%;
     display: inline-block;
 }
@@ -38,8 +40,8 @@ header {
 .top_menu li {
     display: inline-block;
     vertical-align: top;
-    margin-right: 2vw;
-    font-size: 1.2vmax;
+    margin-right: 2vmin;
+    font-size: 1.2min;
 }
 
 .top_menu li:last-child {
@@ -64,17 +66,34 @@ header {
         url('img/soldiers.jpg');
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: top;
     height: 70vh;
     margin: 0;
-    padding-bottom: 5%;
     justify-content: center;
     max-height: 500px;
     position: relative;
+    min-height: 200px;
 }
 
 .d {
     position: absolute;
     top: 35vh;
+}
+
+@media (max-width: 768px) {
+    .military-bg {
+        height: 40vh; /* Можно оставить ваши 40vh или попробовать другие относительные значения */
+    }
+
+    .d {
+        top: 20vh; /* Попробуйте другие относительные значения */
+    }
+}
+
+@media (max-width: 576px) {
+    .flex-item {
+        width: calc(50% - 10px); /* Уменьшаем ширину на половину */
+    }
 }
 
 .military-bg h1, h2 {
@@ -92,7 +111,7 @@ header {
 
 .military-bg h2 {
     color: rgb(182, 182, 182);
-    font-size: 2vmin;
+    font-size: 2.5vmin;
 }
 
 .fade-in {
@@ -120,7 +139,6 @@ header {
   
 .flex-item {
     position: relative;
-    overflow: hidden;
     width: calc(25% - 10px); /* ширина элемента с учетом промежутков */
 }
 
@@ -129,19 +147,8 @@ header {
     display: block; /* убираем пробелы между изображениями и описаниями */
 }
 
-@media (max-width: 768px) {
-    .flex-item {
-      width: calc(33.33% - 10px); /* Уменьшаем ширину на одну треть */
-    }
-  }
-  
-@media (max-width: 576px) {
-.flex-item {
-    width: calc(50% - 10px); /* Уменьшаем ширину на половину */
-    }
-}
-
 .caption {
+    font-size: 100%;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -152,8 +159,36 @@ header {
     text-align: center;
     opacity: 0;
     transition: opacity 0.3s ease;
+    max-height: 50%;
+
+    overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: auto;
+	text-overflow: ellipsis;
+}
+
+@media (max-width: 768px) {
+    .flex-item {
+      width: calc(33.33% - 10px); /* Уменьшаем ширину на одну треть */
+    }
+
+    .caption {
+        font-size: 80%;
+    }
+  }
+  
+@media (max-width: 576px) {
+.flex-item {
+    width: calc(50% - 10px); /* Уменьшаем ширину на половину */
+    }
 }
   
 .flex-item:hover .caption {
     opacity: 1;
+}
+
+footer div {
+    position: absolute;
+    bottom: 0;
+    height: 50px;
 }
