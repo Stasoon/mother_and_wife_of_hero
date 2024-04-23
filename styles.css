@@ -34,7 +34,7 @@ header {
 .top_menu a {
     color: rgb(189, 189, 189);
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 1.2vw;
 }
 
 .top_menu a:hover {
@@ -71,7 +71,7 @@ header {
 }
 
 .military-bg h1 {
-    font-size: 1.8rem;
+    font-size: 1.8%;
     text-align: center;
     color: white;
     margin: 0;
