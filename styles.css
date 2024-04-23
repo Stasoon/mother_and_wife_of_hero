@@ -1,57 +1,58 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Trebuchet MS';
-    margin: 0;
-    padding: 0;
     background-color: rgb(231,231,231);
+    margin: 0;
+    box-sizing: border-box;
 }
 
 header {
-    margin: 0;
     position: sticky;
     top: 0;
     width: 100%;
+    z-index: 10;
 }
 
 .navigation {
     background-color: rgb(34, 34, 34);
     align-items: center;
     display: flex;
-    /* position: fixed; */
-    box-sizing: border-box;
-    padding-left: 4%;
-    width: 100%;
-    vertical-align: middle;
+    padding: 0.4% 0 0.4% 4%;
 }
 
 .logo img {
-    width: 3vw;
-    height: 3vw;
-    padding: 5px 0px;
+    width: 4vw;
+    height: 4vw;
     margin-right: 40px;
     border-radius: 50%;
     display: inline-block;
 }
 
+.top_menu ul {
+    list-style-type: none;
+    padding: 0;
+}
+.top_menu li {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 2vw;
+    font-size: 1.2vmax;
+}
+
+.top_menu li:last-child {
+    margin-right: 0;
+}
+
 .top_menu a {
     color: rgb(189, 189, 189);
     text-decoration: none;
-    font-size: 1.2vw;
 }
-
 .top_menu a:hover {
     color: rgb(232, 232, 232);
     border-bottom: 2px solid rgb(163, 163, 163);
-}
-
-.top_menu ul {
-    list-style-type: none;
-    padding-left: 0;
-    margin: 0;
-}
-
-.top_menu li {
-    display: inline-block;
-    margin-right: 2vw;
 }
 
 .military-bg {
@@ -63,40 +64,42 @@ header {
         url('img/soldiers.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    background-attachment: scroll;
-    height: 50vh;
+    height: 70vh;
     margin: 0;
-    padding-bottom: 8%;
+    padding-bottom: 5%;
     justify-content: center;
     max-height: 500px;
-    overflow: hidden;
+    position: relative;
 }
 
-.military-bg h1 h2 {
+.d {
+    position: absolute;
+    top: 35vh;
+}
+
+.military-bg h1, h2 {
     word-wrap: break-word; /* Добавлено */
     max-width: 100%;
-}
-
-.military-bg h1 {
-    font-size: 2rem;
     text-align: center;
-    color: white;
-    margin: 0;
-    margin-bottom: 2%;
     padding: 0px 4%;
 }
 
+.military-bg h1 {
+    font-size: 4vmin;
+    color: white;
+    margin: 0 0 2% 0;
+}
+
 .military-bg h2 {
-    text-align: center;
     color: rgb(182, 182, 182);
-    font-size: 1rem;
+    font-size: 2vmin;
 }
 
 .fade-in {
-    opacity: 0; /* начальное значение непрозрачности */
-    animation: fadeIn ease-in 1; /* добавляем анимацию fadeIn */
-    animation-fill-mode: forwards; /* будет видимым после завершения анимации */
-    animation-duration: 1.5s; /* длительность анимации в 1 секунду */
+    opacity: 0;
+    animation: fadeIn ease-in 1;
+    animation-fill-mode: forwards;
+    animation-duration: 1.5s;
 }
   
 @keyframes fadeIn {
@@ -120,12 +123,24 @@ header {
     overflow: hidden;
     width: calc(25% - 10px); /* ширина элемента с учетом промежутков */
 }
-  
+
 .flex-item img {
     width: 100%;
     display: block; /* убираем пробелы между изображениями и описаниями */
 }
+
+@media (max-width: 768px) {
+    .flex-item {
+      width: calc(33.33% - 10px); /* Уменьшаем ширину на одну треть */
+    }
+  }
   
+@media (max-width: 576px) {
+.flex-item {
+    width: calc(50% - 10px); /* Уменьшаем ширину на половину */
+    }
+}
+
 .caption {
     position: absolute;
     bottom: 0;
@@ -139,6 +154,6 @@ header {
     transition: opacity 0.3s ease;
 }
   
-  .flex-item:hover .caption {
+.flex-item:hover .caption {
     opacity: 1;
-  }
+}
